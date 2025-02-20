@@ -2,6 +2,8 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("test comit");
+        HerniMapa h = new HerniMapa();
+        System.out.println(h.NactiMapu());
+        System.out.println(h.toString());
     }
 }
