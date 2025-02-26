@@ -13,12 +13,35 @@ public class Lokace {
         this.zapad = zapad;
     }
 
+    public Lokace() {
+    }
+
+    public String getNazevLokace() {
+        return nazevLokace;
+    }
+
+    public String getSever() {
+        return sever;
+    }
+
+    public String getVychod() {
+        return vychod;
+    }
+
+    public String getJih() {
+        return jih;
+    }
+
+    public String getZapad() {
+        return zapad;
+    }
+
     @Override
     public String toString() {
-        return  "nazevLokace:" + nazevLokace + '\'' +
-                ", sever:" + sever + '\'' +
-                ", vychod:" + vychod + '\'' +
-                ", jih:" + jih + '\'' +
-                ", zapad:" + zapad + '\'';
+        return  "nazevLokace:" + nazevLokace +
+                ", sever:" + sever +
+                ", vychod:" + vychod  +
+                ", jih:" + jih +
+                ", zapad:" + zapad +'\n';
     }
 }
