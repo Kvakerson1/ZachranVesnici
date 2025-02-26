@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class HerniMapa {
 
     private ArrayList<Lokace> mapa = new ArrayList<>();
-
+    private String soucasnaLokace = "start";
 
     public boolean NactiMapu(){
         try (BufferedReader br = new BufferedReader(new FileReader("mapa.txt"))){
@@ -21,10 +21,47 @@ public class HerniMapa {
         }
     }
 
-    @Override
-    public String toString() {
-        return "HerniMapa{" +
-                "mapa=" + mapa +
-                '}';
+    public boolean posun(int smer){
+        Lokace lokace = new Lokace();
+        for (int i = 0; i < mapa.size();i++){
+            if (mapa.get(i).getNazevLokace().equals(soucasnaLokace)){
+                lokace = mapa.get(i);
+            }
+        }
+        switch (smer){
+            case 1:
+                if (!lokace.getSever().equals("null")){
+                    soucasnaLokace = lokace.getSever();
+                    return true;
+                }
+            case 2:
+                if (!lokace.getVychod().equals("null")){
+                    soucasnaLokace = lokace.getVychod();
+                    return true;
+                }
+            case 3:
+                if (!lokace.getJih().equals("null")){
+                    soucasnaLokace = lokace.getJih();
+                    return true;
+                }
+            case 4:
+                if (!lokace.getZapad().equals("null")){
+                    soucasnaLokace = lokace.getZapad();
+                    return true;
+                }
+        }
+        return false;
+    }
+    public String vypisSoucasnePolohy(){
+        for (int i = 0; i< mapa.size();i++){
+            if (mapa.get(i).getNazevLokace().equals(soucasnaLokace)){
+                return mapa.get(i).toString();
+            }
+        }
+        return null;
+    }
+
+    public String vypisMapy() {
+        return mapa.toString();
     }
 }
