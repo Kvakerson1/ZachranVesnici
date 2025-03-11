@@ -1,8 +1,6 @@
-import jdk.jshell.spi.SPIResolutionException;
-
 import java.util.Random;
 
-public class Prohledej {
+public class Poklad {
 
     public Predmet prohledej(Lokace l){
         Predmet p = new Predmet();
@@ -12,7 +10,7 @@ public class Prohledej {
                 p = new Predmet(TypyPredmetu.BRNENI,0, rnd.nextInt(10)+1);
             }
             else{
-                int typZbrane = rnd.nextInt(4);
+                int typZbrane = rnd.nextInt(3);
                 switch (typZbrane){
                     case 0:
                         p = new Predmet(TypyPredmetu.MEC,rnd.nextInt(10)+1, 0);
@@ -20,8 +18,7 @@ public class Prohledej {
                         p = new Predmet(TypyPredmetu.NUZ,rnd.nextInt(5)+1, 0);
                     case 2:
                         p = new Predmet(TypyPredmetu.LUK,rnd.nextInt(5)+1, 0);
-                    case 3:
-                        p = new Predmet(TypyPredmetu.KLADIVO,rnd.nextInt(10)+1, 0);
+
                 }
             }
         }

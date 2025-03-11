@@ -9,6 +9,19 @@ public class Predmet {
         this.ochrana = ochrana;
     }
 
+
     public Predmet() {
+    }
+
+    public TypyPredmetu getTypPredmetu() {
+        return typPredmetu;
+    }
+
+    public int getSila() {
+        return sila;
+    }
+
+    public int getOchrana() {
+        return ochrana;
     }
 }

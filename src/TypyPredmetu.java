@@ -1,3 +1,3 @@
 public enum TypyPredmetu {
-    MEC,NUZ,BRNENI,LUK,KLADIVO,
+    MEC,NUZ,BRNENI,LUK,
 }
