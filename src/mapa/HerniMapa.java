@@ -35,21 +35,29 @@ public class HerniMapa {
                 if (!lokace.getSever().equals("null")){
                     soucasnaLokace = lokace.getSever();
                     return true;
+                }else {
+                    break;
                 }
             case 2:
                 if (!lokace.getVychod().equals("null")){
                     soucasnaLokace = lokace.getVychod();
                     return true;
+                }else {
+                    break;
                 }
             case 3:
                 if (!lokace.getJih().equals("null")){
                     soucasnaLokace = lokace.getJih();
                     return true;
+                }else {
+                    break;
                 }
             case 4:
                 if (!lokace.getZapad().equals("null")){
                     soucasnaLokace = lokace.getZapad();
                     return true;
+                }else {
+                    break;
                 }
         }
         return false;
@@ -61,6 +69,10 @@ public class HerniMapa {
             }
         }
         return null;
+    }
+
+    public  String getSoucasnaLokace() {
+        return soucasnaLokace;
     }
 
     public String vypisMapy() {

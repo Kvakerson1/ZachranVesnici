@@ -11,7 +11,7 @@ public class Main {
         HerniMapa herniMapa = new HerniMapa();
         herniMapa.NactiMapu();
         Hrac h = new Hrac();
-        h.pridaniPredmetu(new Predmet(TypyPredmetu.BRNENI,10,0));
+        System.out.println(herniMapa.vypisSoucasnePolohy());
         Konzole k = new Konzole();
         k.start();
 

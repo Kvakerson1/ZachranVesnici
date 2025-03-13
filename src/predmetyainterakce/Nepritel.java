@@ -31,7 +31,7 @@ public class Nepritel {
     }
 
     public String toString() {
-        return "predmetyainterakce.Nepritel Zivoty: " + zivoty + " Sila: " + sila;
+        return "Nepritel Zivoty: " + zivoty + " Sila: " + sila;
     }
 
 }

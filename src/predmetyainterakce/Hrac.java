@@ -46,6 +46,6 @@ public class Hrac {
 
     @Override
     public String toString() {
-        return "predmetyainterakce.Hrac Zivoty: " + zivoty;
+        return "Hrac Zivoty: " + zivoty;
     }
 }
