@@ -1,3 +1,5 @@
+package predmetyainterakce;
+
 public class Predmet {
     private TypyPredmetu typPredmetu;
     private int sila;
@@ -23,5 +25,14 @@ public class Predmet {
 
     public int getOchrana() {
         return ochrana;
+    }
+
+    @Override
+    public String toString() {
+        return "Predmet{" +
+                "typPredmetu=" + typPredmetu +
+                ", sila=" + sila +
+                ", ochrana=" + ochrana +
+                '}';
     }
 }

@@ -1,8 +1,12 @@
 package commands;
 
+import predmetyainterakce.Hrac;
+
 public class Inventar extends Command{
     public String execute() {
-        return "";
+        Hrac h = new Hrac();
+
+        return h.vypisInventare();
     }
 
     @Override

@@ -1,8 +1,12 @@
 package commands;
 
+import mapa.HerniMapa;
+
 public class Jih extends Command{
     public String execute() {
-        return "";
+        HerniMapa h = new HerniMapa();
+        h.posun(3);
+        return h.vypisSoucasnePolohy();
     }
 
     @Override

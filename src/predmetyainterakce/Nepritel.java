@@ -1,3 +1,5 @@
+package predmetyainterakce;
+
 public class Nepritel {
     private int zivoty;
     private int sila;
@@ -24,10 +26,12 @@ public class Nepritel {
     }
 
     public int getSila() {
+
         return sila;
     }
 
     public String toString() {
-        return "Nepritel Zivoty: " + zivoty + " Sila: " + sila;
+        return "predmetyainterakce.Nepritel Zivoty: " + zivoty + " Sila: " + sila;
     }
+
 }

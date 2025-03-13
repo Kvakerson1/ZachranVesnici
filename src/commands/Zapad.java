@@ -1,8 +1,12 @@
 package commands;
 
+import mapa.HerniMapa;
+
 public class Zapad extends Command{
     public String execute() {
-        return "";
+        HerniMapa h = new HerniMapa();
+        h.posun(4);
+        return h.vypisSoucasnePolohy();
     }
 
     @Override

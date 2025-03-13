@@ -1,10 +1,12 @@
+package predmetyainterakce;
+
 import java.util.ArrayList;
 
 public class Hrac {
 
-    private int zivoty = 10;
-    private int maxZivoty = 10;
-    private ArrayList<Predmet> inventar = new ArrayList<>();
+    private static int zivoty = 10;
+    private static int maxZivoty = 10;
+    private static ArrayList<Predmet> inventar = new ArrayList<>();
 
     public int getZivoty() {
         return zivoty;
@@ -26,6 +28,7 @@ public class Hrac {
         return true;
     }
 
+
     public ArrayList<Predmet> getInventar() {
         return inventar;
     }
@@ -33,7 +36,7 @@ public class Hrac {
     public void pridaniPredmetu(Predmet p){
         inventar.add(p);
     }
-    public String VypisInventare(){
+    public String vypisInventare(){
         String vypis = "";
         for (int i = 0; i < inventar.size();i++){
             vypis+= inventar.get(i) + "\n";
@@ -43,6 +46,6 @@ public class Hrac {
 
     @Override
     public String toString() {
-        return "Hrac Zivoty: " + zivoty;
+        return "predmetyainterakce.Hrac Zivoty: " + zivoty;
     }
 }

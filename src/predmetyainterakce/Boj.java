@@ -1,3 +1,5 @@
+package predmetyainterakce;
+
 import java.util.Random;
 
 public class Boj {
@@ -12,7 +14,8 @@ public class Boj {
     private int polohaBrneniVInventari;
 
 
-    public Hrac boj(Hrac h,Nepritel n){
+    public Hrac boj(Hrac h, Nepritel n){
+
         Random rnd = new Random();
         int rana;
         System.out.println(n.toString());
@@ -94,11 +97,11 @@ public class Boj {
             }
             if (h.getInventar().get(i).getTypPredmetu().equals(TypyPredmetu.MEC)){
                 maMec = true;
-                polohaLukuVInventari = i;
+                polohaMeceVInventari = i;
             }
             if (h.getInventar().get(i).getTypPredmetu().equals(TypyPredmetu.BRNENI)){
                 maBrneni = true;
-                polohaNozeVInventari = i;
+                polohaBrneniVInventari = i;
             }
         }
     }

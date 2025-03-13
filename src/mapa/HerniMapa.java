@@ -1,3 +1,5 @@
+package mapa;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -5,8 +7,8 @@ import java.util.ArrayList;
 
 public class HerniMapa {
 
-    private ArrayList<Lokace> mapa = new ArrayList<>();
-    private String soucasnaLokace = "start";
+    private static ArrayList<Lokace> mapa = new ArrayList<>();
+    private static String soucasnaLokace = "start";
 
     public boolean NactiMapu(){
         try (BufferedReader br = new BufferedReader(new FileReader("mapa.txt"))){

@@ -19,6 +19,7 @@ import java.util.Scanner;
             mapa.put("konec", new Ukonci());
             mapa.put("mluv", new Mluv());
             mapa.put("prohledej", new Prohledej());
+            mapa.put("help", new Help());
 
         }
 

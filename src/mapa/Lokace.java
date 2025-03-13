@@ -1,3 +1,5 @@
+package mapa;
+
 public class Lokace {
     private String nazevLokace;
     private String sever;
