@@ -1,11 +1,12 @@
 package predmetyainterakce;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ProdejVeci {
     public String prodej(){
         Hrac h = new Hrac();
-        if (h.getInventar().isEmpty()){
+        if (h.getInventar().isEmpty() && h.getLup().isEmpty()){
             return "nic u sebe nemas";
         }
         System.out.println("Co chceš prodat?");
@@ -26,6 +27,20 @@ public class ProdejVeci {
             case "nuz":
                 p.setTypPredmetu(TypyPredmetu.NUZ);
                 break;
+            case "lup":
+                String vypis = "Prodal jsi ";
+                int cena = 0;
+                if (h.getLup().isEmpty()){
+                    return "není co prodat";
+                }
+                for (int i = 0; i < h.getLup().size();i++) {
+                    vypis += h.getLup().get(i).toString() + " ";
+                    cena += h.getLup().get(i).getCena();
+                }
+                h.setLup(new ArrayList<>());
+                h.pridaniPenez(cena);
+                vypis += "za celkovou cenu: " + cena;
+                return vypis;
             default:
                 return "tohle nekupuji";
         }

@@ -13,7 +13,6 @@ public class KonzoleObchod {
         mapa.put("zpet", new Zpet());
         mapa.put("help", new Help());
         mapa.put("prodej", new Prodej());
-        mapa.put("prodej lup", new ProdejLup());
         mapa.put("kup", new Kup());
         mapa.put("inventar", new Inventar());
         mapa.put("dopln zivoty", new DoplnZivoty());
