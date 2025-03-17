@@ -1,12 +1,13 @@
-package commands;
+package Obchod;
+
 
 import predmetyainterakce.Hrac;
 
-public class Inventar extends Command{
+public class Inventar extends CommandObchod {
     public String execute() {
         Hrac h = new Hrac();
 
-        return h.vypisInventare() + "\n" + h.vypisLupu() + "\n"  + "penize: " + h.getPenize();
+        return h.vypisInventare() + "\n" + h.vypisLupu() + "\n" + "penize: " + h.getPenize();
     }
 
     @Override

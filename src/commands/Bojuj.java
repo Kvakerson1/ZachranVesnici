@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class Bojuj extends Command{
     private static int zvyseniSily = 1;
+    private boolean jeMrtví = false;
     private static ArrayList<String> l = new ArrayList<>();
     public String execute() {
         Random rnd = new Random();
@@ -28,6 +29,10 @@ public class Bojuj extends Command{
         b.nacteniInventare(h);
 
         h = b.boj(h,n);
+        if (h.getZivoty() <= 0){
+            System.out.println("Zemřel jsi");
+            jeMrtví = true;
+        }
         zvyseniSily+=1;
         l.add(herniMapa.getSoucasnaLokace());
         return h.toString()+"\n"+herniMapa.vypisSoucasnePolohy();
@@ -35,7 +40,7 @@ public class Bojuj extends Command{
 
     @Override
     public boolean exit() {
-        return false;
+        return jeMrtví;
     }
 
     public ArrayList<String> getL() {

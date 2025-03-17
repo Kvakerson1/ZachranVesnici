@@ -3,14 +3,21 @@ package predmetyainterakce;
 public class Predmet {
     private TypyPredmetu typPredmetu;
     private int sila;
-    private int ochrana;
 
-    public Predmet(TypyPredmetu typPredmetu, int sila, int ochrana) {
+
+    public Predmet(TypyPredmetu typPredmetu, int sila) {
         this.typPredmetu = typPredmetu;
         this.sila = sila;
-        this.ochrana = ochrana;
+
     }
 
+    public void setTypPredmetu(TypyPredmetu typPredmetu) {
+        this.typPredmetu = typPredmetu;
+    }
+
+    public void setSila(int sila) {
+        this.sila = sila;
+    }
 
     public Predmet() {
     }
@@ -23,16 +30,10 @@ public class Predmet {
         return sila;
     }
 
-    public int getOchrana() {
-        return ochrana;
-    }
+
 
     @Override
     public String toString() {
-        return "Predmet{" +
-                "typPredmetu=" + typPredmetu +
-                ", sila=" + sila +
-                ", ochrana=" + ochrana +
-                '}';
+        return typPredmetu + " se silou " + sila;
     }
 }

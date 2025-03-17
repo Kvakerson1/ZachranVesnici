@@ -7,6 +7,9 @@ public class Hrac {
     private static int zivoty = 10;
     private static int maxZivoty = 10;
     private static ArrayList<Predmet> inventar = new ArrayList<>();
+    private static ArrayList<Lup> lup = new ArrayList<>();
+
+    private static int penize = 0;
 
     public int getZivoty() {
         return zivoty;
@@ -15,6 +18,23 @@ public class Hrac {
     public int getMaxZivoty() {
         return maxZivoty;
     }
+
+    public int getPenize() {
+        return penize;
+    }
+
+    public void setLup(ArrayList<Lup> lup) {
+        Hrac.lup = lup;
+    }
+
+    public void pridaniPenez(int pridej){
+        penize+=pridej;
+    }
+    public void odebraniPenez(int odeber){
+        penize-=odeber;
+    }
+
+
 
     public void ubraniZivotu(int rana){
         zivoty = zivoty-rana;
@@ -33,9 +53,19 @@ public class Hrac {
         return inventar;
     }
 
+    public ArrayList<Lup> getLup() {
+        return lup;
+    }
+
+
     public void pridaniPredmetu(Predmet p){
         inventar.add(p);
     }
+
+    public void pridaniLupu(Lup l){
+        lup.add(l);
+    }
+
     public String vypisInventare(){
         String vypis = "";
         for (int i = 0; i < inventar.size();i++){
@@ -43,6 +73,16 @@ public class Hrac {
         }
         return vypis;
     }
+
+    public String vypisLupu(){
+        String vypis = "";
+        for (int i = 0; i <lup.size();i++){
+            vypis+= lup.get(i) + "\n";
+        }
+        return vypis;
+    }
+
+
 
     @Override
     public String toString() {

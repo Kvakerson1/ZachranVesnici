@@ -17,6 +17,7 @@ public class Boj {
     public Hrac boj(Hrac h, Nepritel n){
 
         Random rnd = new Random();
+        GeneraceLupu g = new GeneraceLupu();
         int rana;
         System.out.println(n.toString());
         if (maLuk){
@@ -25,6 +26,9 @@ public class Boj {
             System.out.println("strela lukem za " + rana);
             System.out.println(n.toString() + "\n");
             if (!n.jeNaZivu()){
+                Lup l = g.vytvor();
+                System.out.println("Dostal jsi: " + l.toString());
+                h.pridaniLupu(l);
                 return h;
             }
         }
@@ -35,6 +39,9 @@ public class Boj {
                 System.out.println("rana mecem za " + rana);
                 System.out.println(n.toString() + "\n");
                 if (!n.jeNaZivu()){
+                    Lup l = g.vytvor();
+                    System.out.println("Dostal jsi: " + l.toString());
+                    h.pridaniLupu(l);
                     return h;
                 }
             }
@@ -43,6 +50,9 @@ public class Boj {
                 System.out.println("rana pesti za " + 1);
                 System.out.println(n.toString() + "\n");
                 if (!n.jeNaZivu()){
+                    Lup l = g.vytvor();
+                    System.out.println("Dostal jsi: " + l.toString());
+                    h.pridaniLupu(l);
                     return h;
                 }
             }
@@ -52,13 +62,16 @@ public class Boj {
                 System.out.println("rana nozem za " + rana);
                 System.out.println(n.toString() + "\n");
                 if (!n.jeNaZivu()){
+                    Lup l = g.vytvor();
+                    System.out.println("Dostal jsi: " + l.toString());
+                    h.pridaniLupu(l);
                     return h;
                 }
             }
             if (maBrneni){
                 rana = rnd.nextInt(n.getSila())+1;
-                if (rana > h.getInventar().get(polohaBrneniVInventari).getOchrana()){
-                    h.ubraniZivotu(rana-h.getInventar().get(polohaBrneniVInventari).getOchrana());
+                if (rana > h.getInventar().get(polohaBrneniVInventari).getSila()){
+                    h.ubraniZivotu(rana-h.getInventar().get(polohaBrneniVInventari).getSila());
                     System.out.println("rana od nepritele za " + rana);
                     System.out.println(h.toString() + "\n");
                     if (!h.jeNaZivu()){
@@ -121,7 +134,7 @@ public class Boj {
             }
             if (h.getInventar().get(i).getTypPredmetu().equals(TypyPredmetu.BRNENI)){
                 if (maBrneni){
-                    if (h.getInventar().get(i).getOchrana() > h.getInventar().get(polohaBrneniVInventari).getOchrana()){
+                    if (h.getInventar().get(i).getSila() > h.getInventar().get(polohaBrneniVInventari).getSila()){
                         polohaBrneniVInventari = i;
                     }
                 }else{

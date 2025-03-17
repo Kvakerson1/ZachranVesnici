@@ -10,10 +10,8 @@ public class Main {
     public static void main(String[] args) {
         HerniMapa herniMapa = new HerniMapa();
         herniMapa.NactiMapu();
-        Hrac h = new Hrac();
         System.out.println(herniMapa.vypisSoucasnePolohy());
         Konzole k = new Konzole();
         k.start();
-
     }
 }
