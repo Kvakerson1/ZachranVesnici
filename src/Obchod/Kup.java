@@ -2,28 +2,41 @@ package Obchod;
 
 import commands.Mluv;
 import mapa.HerniMapa;
+import predmetyainterakce.Hrac;
+import predmetyainterakce.Predmet;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Kup extends CommandObchod {
-
-    private static ArrayList<Obchod> obchody = new ArrayList<>();
     public String execute() {
-        Obchod o = new Obchod();
-        HerniMapa herniMapa = new HerniMapa();
-        GeneraceObchodu g = new GeneraceObchodu();
-        boolean nacteno = false;
-        for (int i = 0; i< obchody.size();i++){
-            if (obchody.get(i).getNazev().equals(herniMapa.getSoucasnaLokace())){
-                o = obchody.get(i);
-                nacteno = true;
+        Mluv m = new Mluv();
+        Hrac h = new Hrac();
+        Scanner sc = new Scanner(System.in);
+        System.out.println(m.getSoucasnyObchod().vypisPredmetu());
+        System.out.println("kolikaty predmet chces koupit");
+        int index;
+        try {
+            index = sc.nextInt()-1;
+            Predmet p = m.getSoucasnyObchod().getPredmety().get(index);
+            if (index < m.getSoucasnyObchod().getPredmety().size()){
+                if (h.getPenize() >= (p.getSila()+ p.getSila()/2)){
+                    h.odebraniPenez(p.getSila()+ p.getSila()/2);
+                    h.pridaniPredmetu(p);
+                    m.getSoucasnyObchod().getPredmety().remove(index);
+                    return "Koupil jsi predmet " + p.toString();
+                }else {
+                    return "Nemas dostatek penez";
+                }
+
+
+
             }
+        }catch (Exception e){
+            return "Tenhle predmet nemam";
         }
-        if (!nacteno){
-            o = g.vytvoreniObchodu();
-        }
-        System.out.println(o.vypisPredmetu());
-        return "";
+        return "Tenhle predmet nemam";
+
     }
 
     @Override

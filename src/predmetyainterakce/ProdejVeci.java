@@ -1,11 +1,17 @@
 package predmetyainterakce;
 
+import Obchod.Kup;
+import commands.Mluv;
+import mapa.HerniMapa;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ProdejVeci {
     public String prodej(){
         Hrac h = new Hrac();
+        Mluv m = new Mluv();
+        HerniMapa herniMapa = new HerniMapa();
         if (h.getInventar().isEmpty() && h.getLup().isEmpty()){
             return "nic u sebe nemas";
         }
@@ -54,6 +60,7 @@ public class ProdejVeci {
         for (int i = 0; i< h.getInventar().size();i++){
             if (h.getInventar().get(i).toString().equals(p.toString())){
                 h.pridaniPenez(h.getInventar().get(i).getSila());
+                m.getSoucasnyObchod().pridejPredmet(h.getInventar().get(i));
                 h.getInventar().remove(i);
                 return "Kupuju";
             }

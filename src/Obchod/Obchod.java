@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Obchod {
     private String nazev;
-    private ArrayList<Predmet> predmety;
+    private ArrayList<Predmet> predmety = new ArrayList<>();
 
     public Obchod(String nazev, ArrayList<Predmet> predmety) {
         this.nazev = nazev;
@@ -31,14 +31,10 @@ public class Obchod {
     }
 
     public String vypisPredmetu() {
-        return predmety.toString();
-    }
-
-    @Override
-    public String toString() {
-        return "Obchod{" +
-                "nazev='" + nazev + '\'' +
-                ", predmety=" + predmety +
-                '}';
+        String vypis = "";
+        for (int i = 0; i < predmety.size(); i++) {
+            vypis += predmety.get(i).toString() + " a s cenou " + (predmety.get(i).getSila()+predmety.get(i).getSila()/2) + "\n";
+        }
+        return vypis;
     }
 }

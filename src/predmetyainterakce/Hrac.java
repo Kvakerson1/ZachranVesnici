@@ -40,6 +40,10 @@ public class Hrac {
         zivoty = zivoty-rana;
     }
 
+    public void pridaniZivotu(int pridani){
+        zivoty = zivoty+pridani;
+    }
+
     public boolean jeNaZivu(){
         if (zivoty <= 0){
             return false;
