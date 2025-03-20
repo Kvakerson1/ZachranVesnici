@@ -1,6 +1,7 @@
 package mapa;
 
 public class Lokace {
+    //nazev lokace + nazvy sousednich lokaci
     private String nazevLokace;
     private String sever;
     private String vychod;
@@ -44,6 +45,6 @@ public class Lokace {
                 ", sever:" + sever +
                 ", vychod:" + vychod  +
                 ", jih:" + jih +
-                ", zapad:" + zapad +'\n';
+                ", zapad:" + zapad;
     }
 }

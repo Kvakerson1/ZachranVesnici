@@ -1,7 +1,8 @@
 package Obchod;
 public class Zpet extends CommandObchod {
+    //vrati te zpet na mapu
     public String execute() {
-        return "";
+        return "Jsi zpet na mape";
     }
 
     @Override

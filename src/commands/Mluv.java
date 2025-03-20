@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Mluv extends Command{
     private static ArrayList<Obchod> obchody = new ArrayList<>();
     private static Obchod soucasnyObchod;
+    //vytvoreni a presun do obchodu
     public String execute() {
         KonzoleObchod k = new KonzoleObchod();
         HerniMapa herniMapa = new HerniMapa();
@@ -35,9 +36,7 @@ public class Mluv extends Command{
         }
 
         k.start();
-        System.out.println("jsi zpet na mape");
-        System.out.println(herniMapa.vypisSoucasnePolohy());
-        return "";
+        return herniMapa.vypisSoucasnePolohy();
     }
 
     @Override

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Kup extends CommandObchod {
+    //koupi hracem vybrany predmet
     public String execute() {
         Mluv m = new Mluv();
         Hrac h = new Hrac();

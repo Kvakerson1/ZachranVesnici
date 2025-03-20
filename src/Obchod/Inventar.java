@@ -4,6 +4,7 @@ package Obchod;
 import predmetyainterakce.Hrac;
 
 public class Inventar extends CommandObchod {
+    //vypis inventare
     public String execute() {
         Hrac h = new Hrac();
 

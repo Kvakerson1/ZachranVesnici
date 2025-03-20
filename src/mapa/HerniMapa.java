@@ -9,7 +9,7 @@ public class HerniMapa {
 
     private static ArrayList<Lokace> mapa = new ArrayList<>();
     private static String soucasnaLokace = "start";
-
+    //nacte herni mapu ze souboru
     public boolean NactiMapu(){
         try (BufferedReader br = new BufferedReader(new FileReader("mapa.txt"))){
             String line;
@@ -22,7 +22,7 @@ public class HerniMapa {
             return false;
         }
     }
-
+    //posune hrace danym smerem
     public boolean posun(int smer){
         Lokace lokace = new Lokace();
         for (int i = 0; i < mapa.size();i++){
@@ -62,6 +62,7 @@ public class HerniMapa {
         }
         return false;
     }
+    //vypise soucasnou polohu
     public String vypisSoucasnePolohy(){
         for (int i = 0; i< mapa.size();i++){
             if (mapa.get(i).getNazevLokace().equals(soucasnaLokace)){

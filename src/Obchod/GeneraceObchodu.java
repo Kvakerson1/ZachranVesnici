@@ -7,6 +7,7 @@ import mapa.Poklad;
 import java.util.Random;
 
 public class GeneraceObchodu {
+    //vytvori obchod i s nabidkami
     public Obchod vytvoreniObchodu(){
         Obchod o = new Obchod();
         Poklad p = new Poklad();

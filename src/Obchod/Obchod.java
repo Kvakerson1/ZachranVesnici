@@ -5,6 +5,7 @@ import predmetyainterakce.Predmet;
 import java.util.ArrayList;
 
 public class Obchod {
+    //obchod a predmety co prodava
     private String nazev;
     private ArrayList<Predmet> predmety = new ArrayList<>();
 

@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Bojuj extends Command{
-    private static int zvyseniSily = 1;
+    private static int zvyseniSily = 2;
     private boolean jeMrtví = false;
     private static ArrayList<String> l = new ArrayList<>();
+    //boj s nepritelem,pokud hrac prohraje ukonci hru
     public String execute() {
         Random rnd = new Random();
         Boj b = new Boj();
@@ -25,18 +26,20 @@ public class Bojuj extends Command{
                 return "nepritel je jiz porazen";
             }
         }
-        Nepritel n = new Nepritel(zvyseniSily*(rnd.nextInt(6)+5),zvyseniSily*(rnd.nextInt(5)+1));
+        Nepritel n = new Nepritel(zvyseniSily*(rnd.nextInt(4)+7)/2,zvyseniSily*(rnd.nextInt(4)+2)/2);
         b.nacteniInventare(h);
 
         h = b.boj(h,n);
         if (h.getZivoty() <= 0){
-            System.out.println("Zemřel jsi");
             jeMrtví = true;
+            return "Zemřel jsi";
+
         }
         zvyseniSily+=1;
         l.add(herniMapa.getSoucasnaLokace());
         return h.toString()+"\n"+herniMapa.vypisSoucasnePolohy();
     }
+
 
     @Override
     public boolean exit() {
@@ -45,5 +48,9 @@ public class Bojuj extends Command{
 
     public ArrayList<String> getL() {
         return l;
+    }
+
+    public int getZvyseniSily() {
+        return zvyseniSily;
     }
 }

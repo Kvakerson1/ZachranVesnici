@@ -3,7 +3,7 @@ package Obchod;
 import predmetyainterakce.Hrac;
 
 public class DoplnZivoty extends CommandObchod {
-
+    //doplni hraci zivoty za penize
     public String execute() {
         Hrac h = new Hrac();
         if (h.getZivoty() == h.getMaxZivoty()){
@@ -18,9 +18,10 @@ public class DoplnZivoty extends CommandObchod {
             return "Zivoty dopneny do maxima";
         }
         if (h.getPenize() <= h.getMaxZivoty()-h.getZivoty()){
-            h.odebraniPenez(h.getPenize());
-            h.pridaniZivotu(h.getPenize());
-            return "Doplneno " + h.getPenize();
+            int doplneni = h.getPenize();
+            h.pridaniZivotu(doplneni);
+            h.odebraniPenez(doplneni);
+            return "Doplneno " + doplneni;
         }
 
         return "";

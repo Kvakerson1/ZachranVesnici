@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class Prohledej extends Command{
     private static ArrayList<String> l = new ArrayList<>();
+    //pridani predmetu do inventare
     public String execute() {
         HerniMapa h = new HerniMapa();
         Hrac hrac = new Hrac();

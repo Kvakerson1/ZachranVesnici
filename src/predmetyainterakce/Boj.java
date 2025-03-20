@@ -21,7 +21,7 @@ public class Boj {
         int rana;
         System.out.println(n.toString());
         if (maLuk){
-            rana = rnd.nextInt(h.getInventar().get(polohaLukuVInventari).getSila())+1;
+            rana = rnd.nextInt(h.getInventar().get(polohaLukuVInventari).getSila()-5)+6;
             n.ubraniZivotu(rana);
             System.out.println("strela lukem za " + rana);
             System.out.println(n.toString() + "\n");

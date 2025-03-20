@@ -3,6 +3,7 @@ package commands;
 import predmetyainterakce.Hrac;
 
 public class Inventar extends Command{
+    //vypis inventare
     public String execute() {
         Hrac h = new Hrac();
 
