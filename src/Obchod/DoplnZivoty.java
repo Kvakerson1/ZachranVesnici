@@ -25,6 +25,7 @@ public class DoplnZivoty extends CommandObchod {
         }
 
         return "";
+
     }
 
     @Override

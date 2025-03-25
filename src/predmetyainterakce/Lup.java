@@ -20,4 +20,5 @@ public class Lup {
     public String toString() {
         return jmeno + " s cenou " + cena;
     }
+
 }

@@ -1,6 +1,7 @@
 package predmetyainterakce;
 
 public class Nepritel {
+
     private int zivoty;
     private int sila;
 
@@ -17,17 +18,15 @@ public class Nepritel {
         if (zivoty <= 0){
             return false;
         }
-
         return true;
+    }
+    public int getSila() {
+
+        return sila;
     }
 
     public int getZivoty() {
         return zivoty;
-    }
-
-    public int getSila() {
-
-        return sila;
     }
 
     public String toString() {

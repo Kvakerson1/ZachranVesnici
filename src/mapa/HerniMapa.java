@@ -71,12 +71,8 @@ public class HerniMapa {
         }
         return null;
     }
-
     public  String getSoucasnaLokace() {
         return soucasnaLokace;
     }
 
-    public String vypisMapy() {
-        return mapa.toString();
-    }
 }

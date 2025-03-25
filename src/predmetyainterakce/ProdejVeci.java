@@ -11,7 +11,6 @@ public class ProdejVeci {
     public String prodej(){
         Hrac h = new Hrac();
         Mluv m = new Mluv();
-        HerniMapa herniMapa = new HerniMapa();
         if (h.getInventar().isEmpty() && h.getLup().isEmpty()){
             return "nic u sebe nemas";
         }
@@ -67,4 +66,5 @@ public class ProdejVeci {
         }
         return "Takovy predmet nemas";
     }
+
 }
