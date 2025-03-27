@@ -1,6 +1,8 @@
 package predmetyainterakce;
 
-public class Lup {
+import java.io.Serializable;
+
+public class Lup implements Serializable {
     private TypyLupu jmeno;
     private int cena;
 

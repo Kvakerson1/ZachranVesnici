@@ -1,6 +1,8 @@
 package predmetyainterakce;
 
-public class Predmet {
+import java.io.Serializable;
+
+public class Predmet implements Serializable {
     private TypyPredmetu typPredmetu;
     private int sila;
 

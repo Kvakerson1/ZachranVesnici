@@ -1,8 +1,9 @@
 package predmetyainterakce;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Hrac {
+public class Hrac implements Serializable {
 
     private static int zivoty = 10;
     private static int maxZivoty = 10;
@@ -34,7 +35,21 @@ public class Hrac {
         penize-=odeber;
     }
 
+    public void setZivoty(int zivoty) {
+        Hrac.zivoty = zivoty;
+    }
 
+    public void setMaxZivoty(int maxZivoty) {
+        Hrac.maxZivoty = maxZivoty;
+    }
+
+    public void setInventar(ArrayList<Predmet> inventar) {
+        Hrac.inventar = inventar;
+    }
+
+    public void setPenize(int penize) {
+        Hrac.penize = penize;
+    }
 
     public void ubraniZivotu(int rana){
         zivoty = zivoty-rana;
